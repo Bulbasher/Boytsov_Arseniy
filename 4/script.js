@@ -11,6 +11,22 @@ function SearchForLetters(parameter1) {
     };
 }
 
+function Search2(params) {
+    let sum = 0;
+    return function() {
+        let letters_to_find = ["а", "и", "е", "ё", "о", "у", "ы", "э", "ю", "я"];
+        for (let i of params.toLowerCase()) {
+            for (let j = 0; j < letters_to_find.length; j++) {
+                if (i === letters_to_find[j]) {
+                    sum++;
+                    console.log(i);
+                }
+            }
+        }
+        return sum;
+    };
+}
+
 function SearchForEachLetter(parameter1) {
     return function(parameter2) {
         let sum_of_letters = 0;
@@ -40,10 +56,12 @@ let string = prompt(`Введите строку для поиска и подс
 let letters_to_find = ["а", "и", "е", "ё", "о", "у", "ы", "э", "ю", "я"];
 
 let new_Search = SearchForLetters(string);
+let new_Search2 = Search2(string);
 let string_Search = SearchForLettersString(string);
 let each_letter_count = SearchForEachLetter(string);
 
-alert(`число гласных:${new_Search(letters_to_find)}
+alert(`число всех гласных 1 способ:${new_Search(letters_to_find)}
+число всех гласных 2 способ:${new_Search2()}
 строка только из гласных русского алфавита:${string_Search(letters_to_find)}
 число ${letters_to_find[0]}:${each_letter_count(letters_to_find[0])}
 число ${letters_to_find[1]}:${each_letter_count(letters_to_find[1])}
