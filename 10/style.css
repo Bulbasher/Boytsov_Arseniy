@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.first_list {
+    color: rgb(255, 94, 0);
+    width: fit-content;
+}
+
+.second_list {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    width: fit-content;
+}
